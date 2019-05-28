@@ -89,7 +89,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
     // This function will check weather the location is in list or not
     public int SearchArrayList(String name) {
         for (int i = 0; i < latitudeLongitudeList.size(); i++) {
-            if (latitudeLongitudeList.get(i).getMarker().contains(name)) {
+            if (latitudeLongitudeList.get(i).getMarker().equals(name)) {
                 return i;
             }
         }
@@ -117,7 +117,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
         double longitude = latitudeLongitudeList.get(position).getLon();
         String marker = latitudeLongitudeList.get(position).getMarker();
         center = CameraUpdateFactory.newLatLng(new LatLng(latitude, longitude));
-        zoom = CameraUpdateFactory.zoomTo(17);
+        zoom = CameraUpdateFactory.zoomTo(15);
         markerName = mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,
                 longitude)).title(marker));
         mMap.moveCamera(center);
