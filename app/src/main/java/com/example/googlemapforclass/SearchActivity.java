@@ -63,7 +63,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
         });
     }
 
-    // This function will fill arraylist with static data and set autocompleteview with the marker
+    // This function will fill arraylist with static data and set autocompletetextview with the marker
     private void fillArrayListAndSetAdapter()
     {
         latitudeLongitudeList = new ArrayList<>();
@@ -90,6 +90,7 @@ public class SearchActivity extends FragmentActivity implements OnMapReadyCallba
     public int SearchArrayList(String name) {
         for (int i = 0; i < latitudeLongitudeList.size(); i++) {
             if (latitudeLongitudeList.get(i).getMarker().equals(name)) {
+
                 return i;
             }
         }
